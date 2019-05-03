@@ -18,7 +18,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var react_native_1 = require("react-native");
-var Router_1 = require("./Router");
+var Routes_1 = require("./Routes");
 var CounterStore_1 = require("./stores/CounterStore");
 var instructions = react_native_1.Platform.select({
     ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -29,7 +29,7 @@ exports.App = function () {
     var CounterStore = react_1.useContext(CounterStore_1.CounterStoreContext);
     return (react_1.default.createElement(react_native_1.View, { style: styles.container },
         react_1.default.createElement(react_native_1.View, { style: styles.wrapper },
-            react_1.default.createElement(Router_1.Router, null))));
+            react_1.default.createElement(Routes_1.Routes, null))));
 };
 var styles = react_native_1.StyleSheet.create({
     container: {

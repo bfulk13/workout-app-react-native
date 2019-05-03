@@ -10,7 +10,7 @@
 
 import React, { useContext } from "react";
 import { Platform, StyleSheet, View } from "react-native";
-import { Router } from "./Router";
+import { Routes } from "./Routes";
 import { CounterStoreContext } from "./stores/CounterStore";
 
 const instructions = Platform.select({
@@ -26,7 +26,7 @@ export const App = () => {
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
-        <Router />
+        <Routes />
       </View>
     </View>
   );

@@ -1,2 +1,2 @@
-/// <reference types="react" />
-export declare const Router: import("react").NamedExoticComponent<{}>;
+import React from "react";
+export declare const Routes: React.NamedExoticComponent<{}>;

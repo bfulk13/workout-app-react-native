@@ -1,4 +1,4 @@
-{
+({
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -17,5 +17,5 @@
     "jsx": "react"
   },
   "include": ["src"]
-}
-, "Router.tsx"
+},
+"Routes.tsx")
