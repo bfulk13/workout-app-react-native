@@ -10,16 +10,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var mobx_react_lite_1 = require("mobx-react-lite");
 var React = __importStar(require("react"));
 var react_native_1 = require("react-native");
+var Card_1 = require("./Card");
 var styles = react_native_1.StyleSheet.create({
-    card: {
-        borderRadius: 3,
-        backgroundColor: "#fff",
-        shadowColor: "#111",
-        shadowOffset: { width: 2, height: 2 },
-        shadowOpacity: 0.3,
-        shadowRadius: 3,
-        flexDirection: "column",
-        padding: 10,
+    cardContainer: {
         marginBottom: 10
     },
     topRow: {
@@ -56,19 +49,20 @@ var styles = react_native_1.StyleSheet.create({
 });
 exports.WorkoutCard = mobx_react_lite_1.observer(function (_a) {
     var exercise = _a.exercise, repsAndWeight = _a.repsAndWeight, sets = _a.sets, onSetPress = _a.onSetPress;
-    return (React.createElement(react_native_1.View, { style: styles.card },
-        React.createElement(react_native_1.View, { style: styles.topRow },
-            React.createElement(react_native_1.Text, { style: styles.topRowText }, exercise),
-            React.createElement(react_native_1.Text, { style: styles.topRowText }, repsAndWeight)),
-        React.createElement(react_native_1.View, { style: styles.bottomRow }, sets.map(function (set, i) {
-            if (set === "x") {
-                return (React.createElement(react_native_1.View, { style: [styles.circle, styles.fadedBackground], key: set + i },
-                    React.createElement(react_native_1.Text, { style: [styles.grayText, styles.circleText] }, "X")));
-            }
-            if (set === "") {
-                return (React.createElement(react_native_1.TouchableOpacity, { onPress: function () { return onSetPress(i); }, style: [styles.circle, styles.fadedBackground], key: set + i }));
-            }
-            return (React.createElement(react_native_1.TouchableOpacity, { onPress: function () { return onSetPress(i); }, style: styles.circle, key: set + i },
-                React.createElement(react_native_1.Text, { style: [styles.whiteText, styles.circleText] }, set)));
-        }))));
+    return (React.createElement(react_native_1.View, { style: styles.cardContainer },
+        React.createElement(Card_1.Card, null,
+            React.createElement(react_native_1.View, { style: styles.topRow },
+                React.createElement(react_native_1.Text, { style: styles.topRowText }, exercise),
+                React.createElement(react_native_1.Text, { style: styles.topRowText }, repsAndWeight)),
+            React.createElement(react_native_1.View, { style: styles.bottomRow }, sets.map(function (set, i) {
+                if (set === "x") {
+                    return (React.createElement(react_native_1.View, { style: [styles.circle, styles.fadedBackground], key: set + i },
+                        React.createElement(react_native_1.Text, { style: [styles.grayText, styles.circleText] }, "X")));
+                }
+                if (set === "") {
+                    return (React.createElement(react_native_1.TouchableOpacity, { onPress: function () { return onSetPress(i); }, style: [styles.circle, styles.fadedBackground], key: set + i }));
+                }
+                return (React.createElement(react_native_1.TouchableOpacity, { onPress: function () { return onSetPress(i); }, style: styles.circle, key: set + i },
+                    React.createElement(react_native_1.Text, { style: [styles.whiteText, styles.circleText] }, set)));
+            })))));
 });

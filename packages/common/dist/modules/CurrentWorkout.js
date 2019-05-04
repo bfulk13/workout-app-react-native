@@ -13,6 +13,7 @@ var react_native_1 = require("react-native");
 var RootStore_1 = require("../stores/RootStore");
 var WorkoutCard_1 = require("../ui/WorkoutCard");
 var WorkoutTimer_1 = require("../ui/WorkoutTimer");
+var dayjs = require("dayjs");
 var styles = react_native_1.StyleSheet.create({
     container: {
         flex: 1,
@@ -20,7 +21,8 @@ var styles = react_native_1.StyleSheet.create({
         padding: 10
     }
 });
-exports.CurrentWorkout = mobx_react_lite_1.observer(function () {
+exports.CurrentWorkout = mobx_react_lite_1.observer(function (_a) {
+    var history = _a.history;
     var rootStore = React.useContext(RootStore_1.RootStoreContext);
     React.useEffect(function () {
         {
@@ -49,5 +51,10 @@ exports.CurrentWorkout = mobx_react_lite_1.observer(function () {
                     e.sets[setIndex] = newValue;
                 }, key: e.exercise, sets: e.sets, exercise: e.exercise, repsAndWeight: e.numSets + "x" + e.reps + " " + e.weight }));
         }),
+        React.createElement(react_native_1.Button, { title: "SAVE", onPress: function () {
+                rootStore.workoutStore.history[dayjs(new Date(+new Date() - Math.floor(Math.random() * 10000000000))).format("YYYY-MM-DD")] = rootStore.workoutStore.currentExercises;
+                rootStore.workoutStore.currentExercises = [];
+                history.push("/");
+            } }),
         rootStore.workoutTimerStore.isRunning ? (React.createElement(WorkoutTimer_1.WorkoutTimer, { percent: rootStore.workoutTimerStore.percent, currentTime: rootStore.workoutTimerStore.display, onXPress: function () { return rootStore.workoutTimerStore.endTimer(); } })) : null));
 });

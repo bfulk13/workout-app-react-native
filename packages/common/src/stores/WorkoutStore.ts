@@ -5,28 +5,10 @@ import { RootStore } from "./RootStore";
 type WorkoutDay = "a" | "b";
 
 interface WorkoutHistory {
-  [key: string]: Array<{
-    exercise: string;
-    value: number;
-  }>;
+  [key: string]: CurrentExercise[];
 }
 
-/*
-{
-  '04-18-2019': [
-    {
-      exercise: 'squat',
-      value: 90
-    },
-    {
-      exercise: 'benchPress',
-      value: 100
-    }
-  ]
-}
-*/
-
-interface CurrentExercise {
+export interface CurrentExercise {
   weight: number;
   reps: number;
   numSets: number;
@@ -48,7 +30,7 @@ export class WorkoutStore {
 
   @persist @observable lastWorkoutType: WorkoutDay;
 
-  @persist('list') @observable currentExercises: CurrentExercise[] = [];
+  @persist("list") @observable currentExercises: CurrentExercise[] = [];
 
-  @persist('list') @observable history: WorkoutHistory;
+  @persist("object") @observable history: WorkoutHistory = {};
 }

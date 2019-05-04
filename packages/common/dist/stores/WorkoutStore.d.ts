@@ -1,12 +1,9 @@
 import { RootStore } from "./RootStore";
 declare type WorkoutDay = "a" | "b";
 interface WorkoutHistory {
-    [key: string]: Array<{
-        exercise: string;
-        value: number;
-    }>;
+    [key: string]: CurrentExercise[];
 }
-interface CurrentExercise {
+export interface CurrentExercise {
     weight: number;
     reps: number;
     numSets: number;

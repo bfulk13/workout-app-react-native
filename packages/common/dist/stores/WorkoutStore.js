@@ -13,6 +13,7 @@ var WorkoutStore = /** @class */ (function () {
     function WorkoutStore(rootStore) {
         this.rootStore = RootStore_1.RootStore;
         this.currentExercises = [];
+        this.history = {};
         this.rootStore = RootStore_1.RootStore;
     }
     __decorate([
@@ -34,10 +35,10 @@ var WorkoutStore = /** @class */ (function () {
         mobx_persist_1.persist, mobx_1.observable
     ], WorkoutStore.prototype, "lastWorkoutType", void 0);
     __decorate([
-        mobx_persist_1.persist('list'), mobx_1.observable
+        mobx_persist_1.persist("list"), mobx_1.observable
     ], WorkoutStore.prototype, "currentExercises", void 0);
     __decorate([
-        mobx_persist_1.persist('list'), mobx_1.observable
+        mobx_persist_1.persist("object"), mobx_1.observable
     ], WorkoutStore.prototype, "history", void 0);
     return WorkoutStore;
 }());
