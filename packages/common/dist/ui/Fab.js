@@ -10,21 +10,29 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
 var react_native_1 = require("react-native");
 var styles = react_native_1.StyleSheet.create({
-    card: {
-        borderRadius: 3,
-        backgroundColor: "#fff",
-        shadowColor: "#111",
+    fab: {
+        width: 40,
+        height: 40,
+        backgroundColor: "pink",
+        position: "absolute",
+        bottom: 20,
+        right: 20,
+        borderRadius: 20,
+        shadowColor: "#000",
         shadowOffset: { width: 2, height: 2 },
         shadowOpacity: 0.3,
         shadowRadius: 3,
-        flexDirection: "column",
-        padding: 10
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    text: {
+        fontSize: 18,
+        marginLeft: 2,
+        marginBottom: 2
     }
 });
-exports.Card = function (_a) {
-    var children = _a.children, onPress = _a.onPress;
-    if (onPress) {
-        return (React.createElement(react_native_1.TouchableOpacity, { style: styles.card, onPress: onPress }, children));
-    }
-    return React.createElement(react_native_1.View, { style: styles.card }, children);
+exports.Fab = function (_a) {
+    var onPress = _a.onPress;
+    return (React.createElement(react_native_1.TouchableOpacity, { onPress: onPress, style: styles.fab },
+        React.createElement(react_native_1.Text, { style: styles.text }, "+")));
 };

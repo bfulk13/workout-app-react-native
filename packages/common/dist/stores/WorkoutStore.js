@@ -8,14 +8,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var mobx_1 = require("mobx");
 var mobx_persist_1 = require("mobx-persist");
-var RootStore_1 = require("./RootStore");
 var WorkoutStore = /** @class */ (function () {
     function WorkoutStore(rootStore) {
-        this.rootStore = RootStore_1.RootStore;
+        this.currentSquat = 45;
+        this.currentBenchPress = 45;
+        this.currentOverheadPress = 45;
+        this.currentDeadlift = 65;
+        this.currentBarbellRow = 65;
+        this.lastWorkoutType = "a";
         this.currentExercises = [];
         this.history = {};
-        this.rootStore = RootStore_1.RootStore;
+        this.rootStore = rootStore;
     }
+    Object.defineProperty(WorkoutStore.prototype, "hasCurrentWorkout", {
+        get: function () {
+            return !!this.currentExercises.length;
+        },
+        enumerable: true,
+        configurable: true
+    });
     __decorate([
         mobx_persist_1.persist, mobx_1.observable
     ], WorkoutStore.prototype, "currentSquat", void 0);
@@ -37,6 +48,9 @@ var WorkoutStore = /** @class */ (function () {
     __decorate([
         mobx_persist_1.persist("list"), mobx_1.observable
     ], WorkoutStore.prototype, "currentExercises", void 0);
+    __decorate([
+        mobx_1.computed
+    ], WorkoutStore.prototype, "hasCurrentWorkout", null);
     __decorate([
         mobx_persist_1.persist("object"), mobx_1.observable
     ], WorkoutStore.prototype, "history", void 0);
