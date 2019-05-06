@@ -10,11 +10,12 @@ var mobx_1 = require("mobx");
 var mobx_persist_1 = require("mobx-persist");
 var WorkoutStore = /** @class */ (function () {
     function WorkoutStore(rootStore) {
-        this.currentSquat = 45;
-        this.currentBenchPress = 45;
-        this.currentOverheadPress = 45;
-        this.currentDeadlift = 65;
-        this.currentBarbellRow = 65;
+        this.currentSquat = 275;
+        this.currentBenchPress = 245;
+        this.currentOverheadPress = 205;
+        this.currentDeadlift = 365;
+        this.currentBarbellRow = 185;
+        this.currentPullup = 0;
         this.lastWorkoutType = "a";
         this.currentExercises = [];
         this.history = {};
@@ -42,6 +43,9 @@ var WorkoutStore = /** @class */ (function () {
     __decorate([
         mobx_persist_1.persist, mobx_1.observable
     ], WorkoutStore.prototype, "currentBarbellRow", void 0);
+    __decorate([
+        mobx_persist_1.persist, mobx_1.observable
+    ], WorkoutStore.prototype, "currentPullup", void 0);
     __decorate([
         mobx_persist_1.persist, mobx_1.observable
     ], WorkoutStore.prototype, "lastWorkoutType", void 0);

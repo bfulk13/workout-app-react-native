@@ -18,6 +18,7 @@ export declare class WorkoutStore {
     currentOverheadPress: number;
     currentDeadlift: number;
     currentBarbellRow: number;
+    currentPullup: number;
     lastWorkoutType: WorkoutDay;
     currentExercises: CurrentExercise[];
     readonly hasCurrentWorkout: boolean;

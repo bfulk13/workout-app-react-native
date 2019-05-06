@@ -63,15 +63,15 @@ exports.WorkoutHistory = mobx_react_lite_1.observer(function (_a) {
             }, data: rows, keyExtractor: function (item) { return item.reduce(function (pv, cv) { return pv + " " + cv.date; }, ""); } }),
         React.createElement(Fab_1.Fab, { onPress: function () {
                 if (!rootStore.workoutStore.hasCurrentWorkout) {
-                    var _a = rootStore.workoutStore, currentBarbellRow = _a.currentBarbellRow, currentBenchPress = _a.currentBenchPress, currentDeadlift = _a.currentDeadlift, currentSquat = _a.currentSquat, currentOverheadPress = _a.currentOverheadPress;
+                    var _a = rootStore.workoutStore, currentBarbellRow = _a.currentBarbellRow, currentBenchPress = _a.currentBenchPress, currentDeadlift = _a.currentDeadlift, currentSquat = _a.currentSquat, currentOverheadPress = _a.currentOverheadPress, currentPullup = _a.currentPullup;
                     var emptySets = ["", "", "", "", ""];
                     if (rootStore.workoutStore.lastWorkoutType === "b") {
                         rootStore.workoutStore.currentExercises.push({
-                            exercise: "Squat",
+                            exercise: "Pullup",
                             numSets: 5,
                             reps: 5,
                             sets: emptySets.slice(),
-                            weight: currentSquat
+                            weight: currentPullup
                         }, {
                             exercise: "Bench Press",
                             numSets: 5,
@@ -80,12 +80,12 @@ exports.WorkoutHistory = mobx_react_lite_1.observer(function (_a) {
                             weight: currentBenchPress
                         }, {
                             exercise: "Deadlift",
-                            numSets: 1,
+                            numSets: 5,
                             reps: 5,
-                            sets: ["", "x", "x", "x", "x"],
+                            sets: emptySets.slice(),
                             weight: currentDeadlift
                         });
-                        rootStore.workoutStore.currentSquat += 5;
+                        rootStore.workoutStore.currentPullup += 0;
                         rootStore.workoutStore.currentBenchPress += 5;
                         rootStore.workoutStore.currentDeadlift += 5;
                     }

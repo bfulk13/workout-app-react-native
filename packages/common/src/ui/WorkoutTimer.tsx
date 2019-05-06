@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   line: {
     height: 3,
-    backgroundColor: "#EC8765"
+    backgroundColor: "#F0A22E"
   }
 });
 

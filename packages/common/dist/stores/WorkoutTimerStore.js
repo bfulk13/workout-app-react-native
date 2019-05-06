@@ -43,7 +43,7 @@ var WorkoutTimerStore = /** @class */ (function () {
     };
     Object.defineProperty(WorkoutTimerStore.prototype, "percent", {
         get: function () {
-            return Math.min(100, (this.seconds / 40) * 100) + "%";
+            return Math.min(100, (this.seconds / 30) * 100) + "%";
         },
         enumerable: true,
         configurable: true

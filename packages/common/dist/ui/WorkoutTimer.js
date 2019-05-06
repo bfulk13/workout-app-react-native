@@ -35,7 +35,7 @@ var styles = react_native_1.StyleSheet.create({
     },
     line: {
         height: 3,
-        backgroundColor: "#EC8765"
+        backgroundColor: "#F0A22E"
     }
 });
 exports.WorkoutTimer = function (_a) {

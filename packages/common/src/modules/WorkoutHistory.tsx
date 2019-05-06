@@ -85,18 +85,19 @@ export const WorkoutHistory: React.FC<Props> = observer(({ history }) => {
               currentBenchPress,
               currentDeadlift,
               currentSquat,
-              currentOverheadPress
+              currentOverheadPress,
+              currentPullup
             } = rootStore.workoutStore;
             const emptySets = ["", "", "", "", ""];
 
             if (rootStore.workoutStore.lastWorkoutType === "b") {
               rootStore.workoutStore.currentExercises.push(
                 {
-                  exercise: "Squat",
+                  exercise: "Pullup",
                   numSets: 5,
                   reps: 5,
                   sets: [...emptySets],
-                  weight: currentSquat
+                  weight: currentPullup
                 },
                 {
                   exercise: "Bench Press",
@@ -107,14 +108,14 @@ export const WorkoutHistory: React.FC<Props> = observer(({ history }) => {
                 },
                 {
                   exercise: "Deadlift",
-                  numSets: 1,
+                  numSets: 5,
                   reps: 5,
-                  sets: ["", "x", "x", "x", "x"],
+                  sets: [...emptySets],
                   weight: currentDeadlift
                 }
               );
 
-              rootStore.workoutStore.currentSquat += 5;
+              rootStore.workoutStore.currentPullup += 0;
               rootStore.workoutStore.currentBenchPress += 5;
               rootStore.workoutStore.currentDeadlift += 5;
             } else {

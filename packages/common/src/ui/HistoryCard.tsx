@@ -10,24 +10,30 @@ interface Props {
 }
 
 const exerciseShortName = {
-  'Squat': 'SQ',
-  'Deadlift': 'DL',
-  'Bench Press': 'BP',
-  'Overhead Press': 'OHP',
-  'Barbell Row': 'ROW'
-}
+  "Squat": "SQ",
+  "Deadlift": "DL",
+  "Bench Press": "BP",
+  "Overhead Press": "OHP",
+  "Barbell Row": "ROW",
+  "Pullup": "PUP"
+};
 
-export const HistoryCard: React.FC<Props> = ({ header, currentExercises, onPress }) => {
+export const HistoryCard: React.FC<Props> = ({
+  header,
+  currentExercises,
+  onPress
+}) => {
   return (
     <Card onPress={onPress}>
       <Text>{header}</Text>
       {currentExercises.map(ce => {
-        return(
-          <Text key={ce.exercise}>{`${
-            exerciseShortName[ce.exercise as keyof typeof exerciseShortName]
+        return (
+          <Text key={ce.exercise}>
+            {`${
+              exerciseShortName[ce.exercise as keyof typeof exerciseShortName]
             } ${ce.numSets}x${ce.reps} ${ce.weight}`}
           </Text>
-        )
+        );
       })}
     </Card>
   );

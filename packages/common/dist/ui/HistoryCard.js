@@ -11,11 +11,12 @@ var React = __importStar(require("react"));
 var react_native_1 = require("react-native");
 var Card_1 = require("./Card");
 var exerciseShortName = {
-    'Squat': 'SQ',
-    'Deadlift': 'DL',
-    'Bench Press': 'BP',
-    'Overhead Press': 'OHP',
-    'Barbell Row': 'ROW'
+    "Squat": "SQ",
+    "Deadlift": "DL",
+    "Bench Press": "BP",
+    "Overhead Press": "OHP",
+    "Barbell Row": "ROW",
+    "Pullup": "PUP"
 };
 exports.HistoryCard = function (_a) {
     var header = _a.header, currentExercises = _a.currentExercises, onPress = _a.onPress;

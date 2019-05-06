@@ -22,11 +22,12 @@ export class WorkoutStore {
     this.rootStore = rootStore;
   }
 
-  @persist @observable currentSquat: number = 45;
-  @persist @observable currentBenchPress: number = 45;
-  @persist @observable currentOverheadPress: number = 45;
-  @persist @observable currentDeadlift: number = 65;
-  @persist @observable currentBarbellRow: number = 65;
+  @persist @observable currentSquat: number = 275;
+  @persist @observable currentBenchPress: number = 245;
+  @persist @observable currentOverheadPress: number = 205;
+  @persist @observable currentDeadlift: number = 365;
+  @persist @observable currentBarbellRow: number = 185;
+  @persist @observable currentPullup: number = 0;
 
   @persist @observable lastWorkoutType: WorkoutDay = "a";
 

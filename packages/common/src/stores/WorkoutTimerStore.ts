@@ -35,7 +35,7 @@ export class WorkoutTimerStore {
   }
 
   @computed get percent() {
-    return `${Math.min(100, (this.seconds / 40) * 100)}%`;
+    return `${Math.min(100, (this.seconds / 30) * 100)}%`;
   }
 
   @computed get display() {
